@@ -37,7 +37,7 @@ jobs:
           sudo chown -R 104:112 squashfs-data/var/lib/mysql
           sudo chown -R 104:112 squashfs-data/var/log/mysql
           sudo chown -R 104:112 squashfs-data/var/run/mysqld
-          
+
           echo "Setting user passwords and granting sudo rights..."
           echo "root:$ROOT_PASS" | sudo chroot squashfs-data chpasswd
           echo "random:$RANDOM_PASS" | sudo chroot squashfs-data chpasswd
@@ -59,13 +59,14 @@ jobs:
         id: release_info
         run: |
           TAG_NAME=$(date +'%Y.%m.%d-%H%M')
-          ISO_NAME="custom-distro-${TAG_NAME}.iso"
+          ISO_NAME="darkly-patched-${TAG_NAME}.iso"
           echo "tag_name=${TAG_NAME}" >> $GITHUB_OUTPUT
           echo "iso_name=${ISO_NAME}" >> $GITHUB_OUTPUT
 
       - name: Build Bootable ISO
         run: |
           echo "Building bootable ISO using sudo..."
+          echo "BUILD_TIME=$(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_ENV
           sudo genisoimage -r -V "Custom Distro" \
             -b isolinux/isolinux.bin -c isolinux/boot.cat \
             -no-emul-boot -boot-load-size 4 -boot-info-table \
@@ -76,5 +77,15 @@ jobs:
         with:
           tag_name: ${{ steps.release_info.outputs.tag_name }}
           name: "Release ${{ steps.release_info.outputs.tag_name }}"
-          body: "Automated ISO build from commit ${{ github.sha }}."
+          body: |
+            This is an automated build from the `main` branch.
+
+            **Build Details:**
+            - Message: `${{ github.event.head_commit.message }}`
+            - Commit: ${{ github.sha }}
+            - Branch: main
+            - Build Time: ${{ env.BUILD_TIME }}
+
+            **Files:**
+            - `${{ steps.release_info.outputs.iso_name }}` - Darkly Patched
           files: ${{ steps.release_info.outputs.iso_name }}
