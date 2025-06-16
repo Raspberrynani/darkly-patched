@@ -16,29 +16,38 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          lfs: true # Crucial: This tells the action to pull the LFS files
+          lfs: true
 
       - name: Install Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y squashfs-tools genisoimage rsync fakeroot
+          sudo apt-get install -y squashfs-tools genisoimage rsync
 
-      - name: Set User Passwords
-        # For better security, replace these with GitHub Secrets
+      - name: Configure System Files and Passwords
         env:
           ROOT_PASS: "root"
           RANDOM_PASS: "password123"
         run: |
-          echo "Setting user passwords..."
-          # This command directly modifies the password files without needing a full chroot environment
+          echo "Creating MySQL directories..."
+          sudo mkdir -p squashfs-data/var/run/mysqld
+          sudo mkdir -p squashfs-data/var/log/mysql
+
+          echo "Setting permissions using numeric UID/GID..."
+          # FIX: Use the specific UID and GID for mysql from the target system
+          sudo chown -R 104:112 squashfs-data/var/lib/mysql
+          sudo chown -R 104:112 squashfs-data/var/log/mysql
+          sudo chown -R 104:112 squashfs-data/var/run/mysqld
+          
+          echo "Setting user passwords and granting sudo rights..."
           echo "root:$ROOT_PASS" | sudo chroot squashfs-data chpasswd
           echo "random:$RANDOM_PASS" | sudo chroot squashfs-data chpasswd
+          sudo chroot squashfs-data usermod -a -G sudo random
+          echo "Granted sudo rights to user 'random'."
 
       - name: Build filesystem.squashfs
         run: |
-          echo "Building filesystem.squashfs..."
-          # Use fakeroot to ensure files in the squashfs are owned by root
-          fakeroot mksquashfs squashfs-data filesystem.squashfs -comp xz
+          echo "Building filesystem.squashfs using sudo to preserve all permissions..."
+          sudo mksquashfs squashfs-data filesystem.squashfs -comp xz
 
       - name: Prepare Final ISO Build Directory
         run: |
@@ -56,9 +65,8 @@ jobs:
 
       - name: Build Bootable ISO
         run: |
-          echo "Building the final ISO: ${{ steps.release_info.outputs.iso_name }}"
-          # Use fakeroot to preserve bootloader permissions correctly
-          fakeroot genisoimage -r -V "Custom Distro" \
+          echo "Building bootable ISO using sudo..."
+          sudo genisoimage -r -V "Custom Distro" \
             -b isolinux/isolinux.bin -c isolinux/boot.cat \
             -no-emul-boot -boot-load-size 4 -boot-info-table \
             -o ${{ steps.release_info.outputs.iso_name }} ./build/
