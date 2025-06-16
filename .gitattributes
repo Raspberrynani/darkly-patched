@@ -1,0 +1,20 @@
+    # Track common binary and library files with LFS
+    *.so
+    *.so.*
+    *.a
+    *.bin
+    *.elf
+    *.ko
+    *.img
+    *.db
+    
+    # Track common compressed files and media
+    *.png
+    *.jpg
+    *.jpeg
+    *.gif
+    *.deb
+    *.gz
+    *.zip
+    *.xz
+    

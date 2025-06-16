@@ -1,0 +1,5 @@
+ddb1ce1e81e521a5a3e5c95b5b93ba31  usr/lib/python2.7/dist-packages/_ldb_text.py
+3a09bd2bfa829b6100d46d40902f8002  usr/lib/python2.7/dist-packages/ldb.so
+6235303c80a68ce083d715f9f49d1f45  usr/lib/x86_64-linux-gnu/libpyldb-util.so.1.1.24
+d661b0f9eb330a603d5c22c057f7ff68  usr/share/doc/python-ldb/copyright
+5ec19328254460a1fdf36b73ffecc560  usr/share/lintian/overrides/python-ldb

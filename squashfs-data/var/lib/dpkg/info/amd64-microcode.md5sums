@@ -1,0 +1,10 @@
+55ae79b82cbfddcf7142058be3c9ec2d  lib/firmware/amd-ucode/microcode_amd.bin
+122ac7e56442c2b7c28eb26978b2d57c  lib/firmware/amd-ucode/microcode_amd_fam15h.bin
+5e583983ac75974633707eaa802be28b  usr/share/doc/amd64-microcode/README
+bbf517252b5b570c0b8111ac6d16e7b1  usr/share/doc/amd64-microcode/README.Debian
+13514ad631a3ae4cb6c0bee94c561211  usr/share/doc/amd64-microcode/changelog.gz
+c9415a33e788e4b085e0f042370d3524  usr/share/doc/amd64-microcode/copyright
+2682d0b0851bc85f8af036c79a43bd9f  usr/share/doc/amd64-microcode/microcode_amd.bin.README
+4f8fb576efffd5ace706d954baa38700  usr/share/doc/amd64-microcode/microcode_amd_fam15h.bin.README
+2f107ac3f6a04a4a296c0a284903aa97  usr/share/initramfs-tools/hooks/amd64_microcode
+8736dfa422b7b26265f5fa6b97b1c4a8  usr/share/initramfs-tools/scripts/init-premount/amd64_microcode

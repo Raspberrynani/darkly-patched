@@ -1,0 +1,15 @@
+a836d1d91ae856ededf0434e4709ef6c  ./casper/filesystem.size
+65ed74dbc8c2ac2e838f88a5e4e1f906  ./casper/vmlinuz
+9e8e44d635ee5916404e0d37c7fe2918  ./casper/filesystem.squashfs
+4d047687fe907e749adefc25e2dbcb81  ./casper/filesystem.manifest-desktop
+edf5a79957f4d2ed8bfeb5b7366d69a0  ./casper/filesystem.manifest
+d9a6c9a8fa36be926a48d280b7cfe65c  ./casper/README.diskdefines
+68f77003d4492d27755fdeec669a28e2  ./casper/initrd.gz
+2dea446027fde0b8623db959ff8723fb  ./install/memtest
+7e3aa6d1958baf72d369392fdb175486  ./preseed/custom.seed
+d9a6c9a8fa36be926a48d280b7cfe65c  ./README.diskdefines
+d41d8cd98f00b204e9800998ecf8427e  ./ubuntu
+d41d8cd98f00b204e9800998ecf8427e  ./.disk/base_installable
+0073d64372341614cbd20e150bdc3d7b  ./.disk/info
+728cb968a88534e0c50a9d99621f13eb  ./.disk/cd_type
+6d3fbec0ff8f6f51a7097fd3f80dd363  ./.disk/release_notes_url

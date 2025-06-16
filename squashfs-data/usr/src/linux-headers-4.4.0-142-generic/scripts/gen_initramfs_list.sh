@@ -1,0 +1,1 @@
+../../linux-headers-4.4.0-142/scripts/gen_initramfs_list.sh

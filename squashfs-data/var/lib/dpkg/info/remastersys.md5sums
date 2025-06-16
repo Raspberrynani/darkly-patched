@@ -1,0 +1,16 @@
+7e3aa6d1958baf72d369392fdb175486  etc/remastersys/preseed/custom.seed
+4b59cfb96251add1906300dbd482080a  etc/remastersys/isolinux/splash.png
+716d78723b58ab167993b135a980a76f  etc/remastersys/isolinux/isolinux.cfg.vesamenu
+30d6abb216fa091350b416c4af00a338  etc/remastersys/remastersys.version
+d45341ad114e5d25d1477c964c67c9bb  etc/remastersys/plymouth/remastersys-theme/remastersys.png
+3a01ea50742021d37256a97649c5358d  etc/remastersys/plymouth/remastersys-theme/remastersys-theme.script
+46148d042d906d7529ebeac4aed5ccc7  etc/remastersys/plymouth/remastersys-theme/progress_box.png
+aebeac96dad179a80bc3735fcb589c73  etc/remastersys/plymouth/remastersys-theme/remastersys-theme.plymouth
+4d6704797a5adc014385e24f4bddad9f  etc/remastersys/plymouth/remastersys-theme/progress_bar.png
+dccec310f7ea748147ba0c02395e12bd  etc/remastersys.conf
+d780bd7e85b27e51e8f2d7bce15412f7  usr/share/doc/remastersys/copyright
+cb4328adc1a2f94e4b173c146cbad4ee  usr/share/doc/remastersys/README
+626f5e2694c4905c89d4abbd13313feb  usr/share/doc/remastersys/changelog.Debian.gz
+92ead4f34ec9badcbd8aac06b4fd0274  usr/share/man/man1/remastersys.1.gz
+4f97fa1e9ddc84a5bf1826d0f7e8d83e  usr/bin/remastersys
+f2f59567b40bc38f6f8071d13e18d0b7  usr/bin/remastersys-skelcopy

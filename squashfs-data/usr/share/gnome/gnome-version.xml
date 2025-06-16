@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gnome-version>
+ <platform>3</platform>
+ <minor>8</minor>
+ <micro>4</micro>
+ <distributor>Ubuntu</distributor>
+ <date>2018-12-04</date>
+</gnome-version>

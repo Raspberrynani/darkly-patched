@@ -1,0 +1,72 @@
+name: Build and Release ISO
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed to create the release
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true # Crucial: This tells the action to pull the LFS files
+
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y squashfs-tools genisoimage rsync fakeroot
+
+      - name: Set User Passwords
+        # For better security, replace these with GitHub Secrets
+        env:
+          ROOT_PASS: "root"
+          RANDOM_PASS: "password123"
+        run: |
+          echo "Setting user passwords..."
+          # This command directly modifies the password files without needing a full chroot environment
+          echo "root:$ROOT_PASS" | sudo chroot squashfs-data chpasswd
+          echo "random:$RANDOM_PASS" | sudo chroot squashfs-data chpasswd
+
+      - name: Build filesystem.squashfs
+        run: |
+          echo "Building filesystem.squashfs..."
+          # Use fakeroot to ensure files in the squashfs are owned by root
+          fakeroot mksquashfs squashfs-data filesystem.squashfs -comp xz
+
+      - name: Prepare Final ISO Build Directory
+        run: |
+          mkdir build
+          rsync -av iso-data/ build/
+          sudo mv filesystem.squashfs build/casper/
+
+      - name: Generate Release Info
+        id: release_info
+        run: |
+          TAG_NAME=$(date +'%Y.%m.%d-%H%M')
+          ISO_NAME="custom-distro-${TAG_NAME}.iso"
+          echo "tag_name=${TAG_NAME}" >> $GITHUB_OUTPUT
+          echo "iso_name=${ISO_NAME}" >> $GITHUB_OUTPUT
+
+      - name: Build Bootable ISO
+        run: |
+          echo "Building the final ISO: ${{ steps.release_info.outputs.iso_name }}"
+          # Use fakeroot to preserve bootloader permissions correctly
+          fakeroot genisoimage -r -V "Custom Distro" \
+            -b isolinux/isolinux.bin -c isolinux/boot.cat \
+            -no-emul-boot -boot-load-size 4 -boot-info-table \
+            -o ${{ steps.release_info.outputs.iso_name }} ./build/
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.release_info.outputs.tag_name }}
+          name: "Release ${{ steps.release_info.outputs.tag_name }}"
+          body: "Automated ISO build from commit ${{ github.sha }}."
+          files: ${{ steps.release_info.outputs.iso_name }}

@@ -1,0 +1,3 @@
+/etc/init/alsa-state.conf
+/etc/init/alsa-store.conf
+/etc/init/alsa-restore.conf

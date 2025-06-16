@@ -1,0 +1,13 @@
+1b5f8fe9a887b1861ea018e70489770f  usr/bin/gethostip
+3f126c6c09037c304056422c1702608f  usr/bin/isohybrid
+f670b5245c9c39959e1825c80a411ac3  usr/bin/memdiskfind
+53002255815c65bf3e7733fb9f2651ef  usr/bin/syslinux
+0c183305d011942d1d5e101c09e497ae  usr/share/doc/syslinux/README.Debian
+5d97d453ba54ba256cf1b423011d0dfe  usr/share/doc/syslinux/TODO.Debian
+348dea8a880f3c87f223d8f82c81e082  usr/share/doc/syslinux/changelog.Debian.gz
+36de1307b00646a2b7549498ee4e16ed  usr/share/doc/syslinux/copyright
+ab65e218338799d487771ca729f4e5c2  usr/share/doc/syslinux/examples/mtoolsrc
+71c708a78558aed65f9ce0fd953809de  usr/share/man/man1/gethostip.1.gz
+c9f4dc9c5a9dd0d651a777131fd17b72  usr/share/man/man1/isohybrid.1.gz
+02d3b046ff6b30cb42701a799731d424  usr/share/man/man1/memdiskfind.1.gz
+a3c3cb7b37a428700eeeaf32acf95a90  usr/share/man/man1/syslinux.1.gz

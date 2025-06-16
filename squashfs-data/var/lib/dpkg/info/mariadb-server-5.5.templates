@@ -1,0 +1,392 @@
+
+Template: mariadb-server-5.5/really_downgrade
+Type: boolean
+Default: false
+Description: Really proceed with downgrade?
+ A file named /var/lib/mysql/debian-*.flag exists on this system.
+ .
+ Such a file is an indication that a mariadb-server package with a higher
+ version has been installed previously.
+ .
+ There is no guarantee that the version you're currently installing
+ will be able to use the current databases.
+Description-da.UTF-8: Ønsker du virkelig at fortsætte nedgraderingen?
+ Der er en fil med navnet /var/lib/mysql/debian-*.flag på dette system.
+ .
+ Sådan en fil tyder på, at der tidligere har været installeret en højere version af pakken mariadb-server.
+ .
+ Det kan ikke garanteres, at den version, du er ved at installere, kan benytte data fra de eksisterende databaser.
+Description-de.UTF-8: Möchten Sie wirklich eine ältere Version einspielen?
+ Auf diesem System existiert eine Datei mit dem Namen /var/lib/mysql/debian-*.flag
+ .
+ Diese Datei ist ein Hinweis darauf, dass früher ein MariaDB-Server-Paket mit einer höheren Version installiert war.
+ .
+ Es kann nicht garantiert werden, dass die gegenwärtig zu installierende Version dessen Daten benutzen kann.
+Description-fr.UTF-8: Faut-il vraiment revenir à la version précédente ?
+ Un fichier /var/lib/mysql/debian-*.flag est présent sur ce système.
+ .
+ Cela indique qu'une version plus récente du paquet mariadb-server a été précédemment installée.
+ .
+ Il n'est pas garanti que cette version puisse en utiliser les bases de données.
+Description-it.UTF-8: Procedere realmente con l'abbassamento di versione?
+ Su questo sistema esiste un file con nome /var/lib/mysql/debian-*.flag.
+ .
+ Quel file indica che in precedenza è stata installata una versione superiore del pacchetto mariadb-server.
+ .
+ Non è garantito che la versione che sta per essere installata sia in grado di usare i database presenti.
+Description-ja.UTF-8: 本当にダウングレードを実行しますか?
+ このシステムには  /var/lib/mysql/debian-*.flag という名前のファイルが存在しています。
+ .
+ このファイルが意味するのは、以前により新しいバージョンの mariadb-server パッケージがインストールされていたことを示します。
+ .
+ このデータベースを現在インストールしようとしているバージョンで使えるかどうかは保証できません。
+Description-nl.UTF-8: Wilt u echt een oude versie herstellen?
+ Er bestaat een bestand genaamd /var/lib/mysql/debian-*.flag op dit systeem.
+ .
+ Zulk een bestand geeft aan dat er eerder een pakket mariadb-server met een hogere versie is geinstalleerd.
+ .
+ Er is geen garantie dat de versie die u op dit moment installeert de huidige databases kan gebruiken.
+Description-ru.UTF-8: Действительно установить более старую версию?
+ В системе найден файл /var/lib/mysql/debian-*.flag.
+ .
+ Это означает, что ранее уже был установлен пакет mariadb-server более новой версии.
+ .
+ Нет гарантий, что версия, которая устанавливается сейчас, будет способна работать с имеющимися базами данных.
+Description-sv.UTF-8: Vill du verkligen genomföra nedgraderingen?
+ En fil med namnet /var/lib/mysql/debian-*.flag hittades i systemet.
+ .
+ En sådan fil är en indikation på att paketet mariadb-server med ett högre versionsnummer har installerats tidigare.
+ .
+ Det finns ingen garanti för att den version som du håller på att installera kommer att kunna använda de aktuella databaserna.
+
+Template: mysql-server-5.5/nis_warning
+Type: note
+Description: Important note for NIS/YP users
+ Using MariaDB under NIS/YP requires a mysql user account to be added on
+ the local system with:
+ .
+  adduser --system --group --home /var/lib/mysql mysql
+ .
+ You should also check the permissions and ownership of the
+ /var/lib/mysql directory:
+ .
+  /var/lib/mysql: drwxr-xr-x   mysql    mysql
+Description-da.UTF-8: Vigtig oplysning til NIS/YP-brugere
+ Brug af MariaDB under NIS/YP kræver, at en mysql-brugerkonto tilføjes på det lokale system med:
+ .
+  adduser --system --group --home /var/lib/mysql mysql
+ .
+ Du bør også kontrollere filrettighederne og ejerskabet af mappen /var/lib/mysql:
+ .
+  /var/lib/mysql: drwxr-xr-x   mysql    mysql
+Description-de.UTF-8: Wichtige Anmerkung für NIS/YP-Benutzer!
+ Falls MariaDB mit NIS/YP genutzt wird, ist ein »mysql«-Benutzerkonto auf dem lokalen System notwendig:
+ .
+  adduser --system --group --home /var/lib/mysql mysql
+ .
+ Sie sollten außerdem Besitzer und Zugriffsrechte des Verzeichnisses /var/lib/mysql überprüfen:
+ .
+  /var/lib/mysql: drwxr-xr-x   mysql    mysql
+Description-fr.UTF-8: Note importante pour les utilisateurs NIS/YP
+ L'utilisation de MariaDB avec NIS/YP impose l'ajout d'un compte local « mysql » avec la commande :
+ .
+  adduser --system --group --home /var/lib/mysql mysql
+ .
+ Vous devez également vérifier le propriétaire et les permissions du répertoire /var/lib/mysql :
+ .
+  /var/lib/mysql: drwxr-xr-x   mysql    mysql
+Description-it.UTF-8: Nota importante per gli utenti NIS/YP
+ Per usare MariaDB con NIS/YP è necessario aggiungere al sistema un account utente locale con nome mysql con:
+ .
+  adduser --system --group --home /var/lib/mysql mysql
+ .
+ Inoltre è opportuno verificare i permessi e la proprietà della directory /var/lib/mysql:
+ .
+  /var/lib/mysql: drwxr-xr-x   mysql    mysql
+Description-ja.UTF-8: NIS/YP ユーザへの重要な注意
+ NIS/YP 配下で MariaDB を使うにはローカルのシステムに mysql のユーザアカウントを追加するのが必要です。
+ .
+  adduser --system --group --home /var/lib/mysql mysql
+ .
+ /var/lib/mysql の所有者権限をチェックする必要もあります。
+ .
+  /var/lib/mysql: drwxr-xr-x   mysql    mysql
+Description-nl.UTF-8: Belangrijke opmerking voor gebruikers van NIS/YP
+ Het gebruik van MariaDB onder NIS/YP vereist dat een mysql gebruikersaccount wordt toegevoegd aan het lokale systeem met:
+ .
+  adduser --system --group --home /var/lib/mysql mysql
+ .
+ U dient ook de permissies en eigenaren van de map /var/lib/mysql te controleren:
+ .
+  /var/lib/mysql: drwxr-xr-x   mysql    mysql
+Description-ru.UTF-8: Важное замечание для пользователей NIS/YP
+ Использование MariaDB в NIS/YP требует добавления учётной записи mysql в локальную систему с:
+ .
+  adduser --system --group --home /var/lib/mysql mysql
+ .
+ Также проверьте права доступа и владельца каталога /var/lib/mysql:
+ .
+  /var/lib/mysql: drwxr-xr-x   mysql    mysql
+Description-sv.UTF-8: Viktig information för NIS/YP-användare
+ För att kunna använda MariaDB under NIS/YP måste ett användarkonto för mysql läggas till i systemet.
+ .
+  adduser --system --group --home /var/lib/mysql mysql
+ .
+ Du bör också kontrollera rättigheterna och ägaren av katalogen /var/lib/mysql.
+ .
+  /var/lib/mysql: drwxr-xr-x   mysql    mysql
+
+Template: mysql-server-5.5/postrm_remove_databases
+Type: boolean
+Default: false
+Description: Remove all MariaDB databases?
+ The /var/lib/mysql directory which contains the MariaDB databases is about
+ to be removed.
+ .
+ If you're removing the MariaDB package in order to later install a more
+ recent version or if a different mariadb-server package is already
+ using it, the data should be kept.
+Description-ar.UTF-8: إزالة جميع قواعد بيانات MariaDB؟
+ الدليل /var/lib/mysql الذي يحتوي قواعد بيانات MariaDB ستتم إزالته.
+ .
+ إن كنت تقوم بإزالة حزمة MariaDB كي تقوم لاحقاً بتثبيت نسخة أحدث أو إن كانت حزمة mariadb-server مختلفة تستخدمها، فيجب إبقاء البيانات.
+Description-cs.UTF-8: Odstranit všechny MariaDB databáze?
+ Adresář /var/lib/mysql, ve kterém se nachází MariaDB databáze, bude odstraněn.
+ .
+ Jestliže odstraňujete balík MariaDB za účelem instalace novější verze MariaDB, nebo pokud tato data souběžně využívá jiný balík mariadb-server, měli byste data ponechat.
+Description-da.UTF-8: Fjern alle MariaDB-databaser?
+ Mappen /var/lib/mysql, der indeholder MariaDB-databaserne, er ved at blive fjernet.
+ .
+ Hvis du fjerner MariaDB-pakken for senere at installere en nyere version, eller hvis en anden mariadb-server-pakke allerede benytter den, bør dataene bevares.
+Description-de.UTF-8: Alle MariaDB-Datenbanken entfernen?
+ Das Verzeichnis /var/lib/mysql mit den MariaDB-Datenbanken soll entfernt werden.
+ .
+ Falls geplant ist, nur eine höhere Version von MariaDB zu installieren oder ein anderes mariadb-server-Paket dieses bereits benutzt, sollten die Daten behalten werden.
+Description-es.UTF-8: ¿Desea eliminar todas las bases de datos MariaDB?
+ El directorio /var/lib/mysql contiene bases de datos MariaDB que van a eliminarse.
+ .
+ Debería mantener los datos si tiene planificado instalar una versión de MariaDB más reciente o si hay un paquete «mariadb-server» distinto que los está utilizando.
+Description-eu.UTF-8: Ezabatu MariaDB datubase guztiak?
+ MariaDB datubaseak dituen /var/lib/mysql direktorioa ezabatua izango da.
+ .
+ MariaDB paketea beranduago bertsio berriago bat instalatzeko kentzen ari bazara, edo beste mariadb-server pakete bat berau erabiltzen ari bada, datuak mantendu egin beharko lirateke.
+Description-fr.UTF-8: Faut-il supprimer toutes les bases de données MariaDB ?
+ Le répertoire /var/lib/mysql qui contient les bases de données de MariaDB va être supprimé.
+ .
+ Si vous retirez le paquet MariaDB en vue d'en installer une version plus récente ou si un autre paquet mariadb-server les utilise déjà, vous devriez les conserver.
+Description-gl.UTF-8: ¿Eliminar tódalas bases de datos de MariaDB?
+ Hase eliminar o directorio /var/lib/mysql, que contén as bases de datos de MariaDB.
+ .
+ Se está a eliminar o paquete MariaDB para instalar despois unha versión máis recente ou se xa hai un paquete mariadb-server diferente a empregalo, debería conservar os datos.
+Description-it.UTF-8: Eliminare tutti i database MariaDB?
+ La directory /var/lib/mysql che contiene i database di MariaDB sta per essere eliminata.
+ .
+ Se si rimuove il pacchetto MariaDB per poi installare una versione più recente oppure se sono già in uso da un altro pacchetto mariadb-server, i dati non devono essere eliminati.
+Description-ja.UTF-8: すべての MariaDB データベースを削除しますか?
+ MariaDB データベースを含んでいるディレクトリ /var/lib/mysql を削除しようとしています。
+ .
+ 後でより新しいバージョンのものをインストールしようとするために MariaDB パッケージを削除しようとしている、あるいは別の mariadb-server パッケージを既に使っている場合、データは保持する必要があります。
+Description-nl.UTF-8: Wilt u alle MariaDB-databases verwijderen?
+ De map /var/lib/mysql die de MariaDB-databases bevat staat op het punt om verwijderd te worden.
+ .
+ Als u het MariaDB-pakket verwijdert om later een meer recente versie te installeren of als een ander mariadb-server pakket het al gebruikt, zou de data behouden moeten worden.
+Description-pt.UTF-8: Remover todas as bases de dados MariaDB?
+ O directório /var/lib/mysql que contém as bases de dados MariaDB está prestes a ser removido.
+ .
+ Se está a remover o pacote MariaDB de modo a posteriormente instalar uma versão mais recente ou se um pacote mariadb-server já está os está a utilizar, os dados devem ser mantidos.
+Description-pt_BR.UTF-8: Remover todas as bases de dados do MariaDB?
+ O diretório /var/lib/mysql, o qual contém as bases de dados do MariaDB, está prestes a ser removido.
+ .
+ Caso você esteja removendo o pacote MariaDB para posteriormente instalar uma versão mais recente ou, caso uma versão diferente do pacote mariadb-server esteja sendo utilizada, os dados deverão ser mantidos.
+Description-ru.UTF-8: Удалить все базы данных MariaDB?
+ Запрос на удаление каталога /var/lib/mysql, содержащий базы данных MariaDB.
+ .
+ Если вы удаляете пакет MariaDB для установки более новой версии MariaDB, или есть другие пакеты mariadb-server, использующие этот каталог, то данные лучше сохранить.
+Description-sv.UTF-8: Ta bort alla MariaDB-databaser?
+ Katalogen /var/lib/mysql som innehåller MariaDB-databaser kommer att tas bort.
+ .
+ Om avinstallationen av MariaDB-paketet görs för att senare kunna installera en nyare version eller om en annan mariadb-server redan använder filerna ska de inte raderas.
+
+Template: mysql-server/root_password
+Type: password
+Description: New password for the MariaDB "root" user:
+ While not mandatory, it is highly recommended that you set a password
+ for the MariaDB administrative "root" user.
+ .
+ If this field is left blank, the password will not be changed.
+Description-da.UTF-8: Ny adgangskode for MariaDB's »root«-bruger:
+ Selvom det ikke kræves, anbefales det kraftigt, at du sætter en adgangskode for MariaDB's administrationsbruger »root«.
+ .
+ Hvis du lader dette felt stå tomt, vil adgangskoden ikke blive ændret.
+Description-de.UTF-8: Neues Passwort für den MariaDB »root«-Benutzer:
+ Obwohl es nicht zwingend erforderlich ist, wird nachdrücklich empfohlen für den administrativen MariaDB »root«-Benutzer ein Passwort zu setzen.
+ .
+ Wenn dieses Feld freigelassen wird, wird das Passwort nicht geändert.
+Description-fr.UTF-8: Nouveau mot de passe du superutilisateur de MariaDB :
+ Il est très fortement recommandé d'établir un mot de passe pour le compte d'administration de MariaDB (« root »).
+ .
+ Si ce champ est laissé vide, le mot de passe ne sera pas changé.
+Description-it.UTF-8: Nuova password per l'utente «root» di MariaDB:
+ Anche se non è obbligatorio, si raccomanda d'impostare una password per l'utente d'amministrazione «root» di MariaDB.
+ .
+ Se questo campo è lasciato vuoto, la password non viene cambiata.
+Description-ja.UTF-8: MariaDB の "root" ユーザに対する新しいパスワード:
+ 強制ではありませんが、MariaDB を管理する "root" ユーザのパスワードを設定することを強くお勧めします。
+ .
+ この値を空のままにしておいた場合は、パスワードは変更されません。
+Description-nl.UTF-8: Nieuw wachtwoord voor de MariaDB "root"-gebruiker:
+ Hoewel niet verplicht, wordt het sterk aangeraden een wachtwoord in te stellen voor de administratieve MariaDB "root"-gebruiker.
+ .
+ Als dit veld leeg wordt gelaten, zal het wachtwoord niet worden veranderd.
+Description-ru.UTF-8: Новый пароль для MariaDB пользователя «root»:
+ Хотя и необязательно, но настоятельно рекомендуется установить пароль для административного пользователя MariaDB «root».
+ .
+ Если оставить поле пустым, то пароль изменён не будет.
+Description-sv.UTF-8: Nytt lösenord för MariaDBs "root"-användare:
+ Det är inte obligatoriskt men starkt rekommenderat att du sätter ett lösenord för MariaDBs administrativa "root"-användare.
+ .
+ Om detta fält lämnas tom kommer lösenordet inte att ändras.
+
+Template: mysql-server/root_password_again
+Type: password
+Description: Repeat password for the MariaDB "root" user:
+Description-da.UTF-8: Gentag adgangskode for MariaDB's »root«-bruger:
+Description-de.UTF-8: Wiederholen Sie das Passwort für den MariaDB-»root«-Benutzer:
+Description-eu.UTF-8: Errepikatu MariaDB "root" erabiltzailearen pasahitza:
+Description-fr.UTF-8: Confirmation du mot de passe du superutilisateur de MariaDB :
+Description-it.UTF-8: Ripetere la password per l'utente «root» di MariaDB:
+Description-ja.UTF-8: MariaDB の "root" ユーザに対する新しいパスワード:
+Description-nl.UTF-8: Herhaal het wachtwoord voor de MariaDB "root"-gebruiker:
+Description-ru.UTF-8: Повторите ввод пароля для MariaDB пользователя «root»:
+Description-sv.UTF-8: Repetera lösenordet för MariaDBs "root"-användare:
+
+Template: mysql-server/error_setting_password
+Type: error
+Description: Unable to set password for the MariaDB "root" user
+ An error occurred while setting the password for the MariaDB
+ administrative user. This may have happened because the account
+ already has a password, or because of a communication problem with
+ the MariaDB server.
+ .
+ You should check the account's password after the package installation.
+ .
+ Please read the /usr/share/doc/mariadb-server-5.5/README.Debian file
+ for more information.
+Description-da.UTF-8: Kunne ikke sætte adgangskoden for MariaDB's »root«-bruger
+ Der opstod en fejl, da adgangskoden for MariaDB's administrationsbruger blev forsøgt ændret. Dette kan være sket, fordi brugeren allerede har en adgangskode, eller fordi der var problemer med at kommunikere med MariaDB-serveren.
+ .
+ Du bør kontrollere kontoens adgangskode efter pakkeinstallationen.
+ .
+ Se filen /usr/share/doc/mariadb-server-5.5/README.Debian for yderligere information.
+Description-fr.UTF-8: Impossible de changer le mot de passe de l'utilisateur « root » de MariaDB
+ Une erreur s'est produite lors du changement de mot de passe du compte d'administration. Un mot de passe existait peut-être déjà ou il n'a pas été possible de communiquer avec le serveur MariaDB.
+ .
+ Vous devriez vérifier le mot de passe de ce compte après l'installation du paquet.
+ .
+ Veuillez consulter le fichier /usr/share/doc/mariadb-server-5.5/README.Debian pour plus d'informations.
+Description-it.UTF-8: Impossibile impostare la password per l'utente «root» di MariaDB
+ Si è verificato un errore durante l'impostazione della password per l'utente d'amministrazione di MariaDB. Questo può essere accaduto perché l'utente ha già una password oppure a causa di un problema di connessione con il server MariaDB.
+ .
+ Al termine dell'installazione si deve verificare la password dell'account.
+ .
+ Per maggiori informazioni consultare il file /usr/share/doc/mariadb-server-5.5/README.Debian.
+Description-ja.UTF-8: MariaDB の "root" ユーザのパスワードを設定できません
+ MariaDB の管理者ユーザに対してパスワードを設定しようとした際、エラーが発生しました。これは既に管理者ユーザにパスワードが設定されていたか、MariaDB サーバとの接続に問題があったためだと思われます。
+ .
+ パッケージのインストール後、アカウントのパスワードを確認する必要があります。
+ .
+ 詳細は /usr/share/doc/mariadb-server-5.5/README.Debian を参照してください。
+Description-nl.UTF-8: Kan het wachtwoord voor de MariaDB "root"-gebruiker niet instellen
+ Er is een fout opgetreden bij het instellen van het wachtwoord voor de MariaDB administratieve gebruiker. Dat kan komen doordat de gebruiker al een wachtwoord heeft, of omdat er een probleem was bij het communiceren met de MariaDB-server.
+ .
+ U zou het wachtwoord van het account moeten controleren nadat het pakket is geinstalleerd.
+ .
+ Raadpleeg voor bijkomende informatie het bestand /usr/share/doc/mariadb-server-5.5/README.Debian.
+Description-ru.UTF-8: Невозможно задать пароль MariaDB пользователю «root»
+ В процессе задания пароля административного MariaDB пользователя произошла ошибка. Это могло произойти, если у пользователя уже был задан пароль, или из-за проблем соединения с сервером MariaDB.
+ .
+ Проверьте пароль учётной записи после установки пакета.
+ .
+ Подробности смотрите в файле /usr/share/doc/mariadb-server-5.5/README.Debian.
+
+Template: mysql-server/password_mismatch
+Type: error
+Description: Password input error
+ The two passwords you entered were not the same. Please try again.
+Description-da.UTF-8: Indtastningsfejl for adgangskode
+ De to adgangskoder du indtastede var ikke ens. Prøv igen.
+Description-de.UTF-8: Passwort-Eingabefehler
+ Die beiden von Ihnen eingegebenen Passwörter sind nicht identisch. Bitte erneut versuchen.
+Description-eu.UTF-8: Pasahitz sarrera errorea
+ Idatzi dituzun bi pasahitzak ez dira berdina. Mesedez saiatu berriz.
+Description-fr.UTF-8: Erreur de saisie du mot de passe
+ Le mot de passe et sa confirmation ne sont pas identiques. Veuillez recommencer.
+Description-it.UTF-8: Errore di inserimento della password
+ Le due password inserite sono diverse. Riprovare.
+Description-ja.UTF-8: パスワード入力エラー
+ 入力された二つのパスワードが一致しません。再入力してください。
+Description-nl.UTF-8: Fout bij het invoeren van het wachtwoord
+ De twee wachtwoorden die u invoerde waren niet gelijk. Probeer opnieuw.
+Description-ru.UTF-8: Ошибка ввода пароля
+ Два введённых пароля не одинаковы. Повторите ввод.
+Description-sv.UTF-8: Fel vid inmatning av lösenord
+ De två lösenorden du angav stämde inte överrens. Prova igen.
+
+Template: mysql-server/no_upgrade_when_using_ndb
+Type: error
+Description: NDB Cluster seems to be in use
+ MySQL-5.1 no longer provides NDB Cluster support. Please migrate to the new
+ mysql-cluster package and remove all lines starting with "ndb" from
+ all config files below /etc/mysql/.
+Description-da.UTF-8: NDB Cluster ser ud til at være i brug
+ MySQL-5.1 tilbyder ikke længere NDB Cluster-understøttelse. Migrer venligst til den nye pakke mysql-cluster og fjern alle linjer, der starter med »ndb« fra alle konfigurationsfiler under /etc/mysql/.
+Description-de.UTF-8: NDB-Cluster scheint gerade benutzt zu werden
+ MySQL-5.1 bietet keine NDB-Clusterunterstützung mehr. Bitte migrieren Sie Ihr System zum neuen »mysql-cluster«-Paket und entfernen Sie alle Zeilen, die mit »ndb« beginnen aus allen Konfigurationsdateien im Verzeichnis /etc/mysql/.
+Description-fr.UTF-8: Abandon de la gestion de NDB
+ La version 5.1 de MySQL ne gère plus les grappes NDB. Vous devriez utiliser le paquet mysql-cluster et supprimer toutes les lignes commençant par « ndb » des fichiers de configuration situés dans /etc/mysql.
+Description-it.UTF-8: È in uso NDB Cluster
+ MySQL-5.1 non fornisce più il supporto per NDB Cluster. Migrare al nuovo pacchetto mysql-cluster e rimuovere tutte le righe che iniziano per "ndb" da ogni file di configurazione sotto /etc/mysql/.
+Description-ja.UTF-8: NDB クラスタが利用されているようです
+ MySQL-5.1 で NDB クラスタのサポートを提供しなくなりました。新たな mysql-cluster パッケージに移行して、/etc/mysql 以下の設定ファイルすべてから「ndb」で始まる行を削除してください。
+Description-nl.UTF-8: De NDB-cluster lijkt in gebruik te zijn
+ MySQL-5.1 biedt niet langer ondersteuning voor NDB Cluster. Gelieve over te schakelen op het nieuwe pakket mysql-cluster en verwijder alle regels die beginnen met "ndb" uit alle configuratiebestanden onder /etc/mysql/.
+Description-ru.UTF-8: NDB Cluster уже используется
+ MySQL-5.1 больше не поддерживает NDB Cluster. Переходите на новый пакет mysql-cluster и удалите все строки, начинающиеся с «ndb», из всех файлов настройки в каталоге /etc/mysql/.
+Description-sv.UTF-8: NDB-kluster används inte
+ Stödet för NDB-kluster har tagits bort i MySQL-5.1. Migrera till det nya paketet mysql-cluster och ta bort alla rader som inleds med "ndb" från alla inställlningsfiler i /etc/mysql/.
+
+Template: mariadb-server/oneway_migration
+Type: boolean
+Default: true
+Description: Really migrate to MariaDB?
+ MariaDB is a drop-in replacement for MySQL. It will use your current
+ configuration file (my.cnf) and current databases.
+ .
+ Note that MariaDB has some enhanced features, which do not exist in MySQL
+ and thus migration back to MySQL might not always work, at least not as
+ automatically as migrating from MySQL to MariaDB.
+Description-da.UTF-8: Migrer til MariaDB?
+ MariaDB er en direkte erstatning for MySQL. Den vil bruge din nuværende konfigurationsfil (my.cnf) og nuværende databaser.
+ .
+ Bemærk at MariaDB har nogle forbedrede funktioner, som ikke findes i MySQL og migrering tilbage til MySQL vil derfor ikke altid fungere, i det mindste ikke ligeså automatisk som at migrere fra MySQL til MariaDB.
+Description-fr.UTF-8: Souhaitez-vous migrer vers MariaDB ?
+ MariaDB remplace à l'identique MySQL. Le fichier de configuration actuel (my.cnf) ainsi que les bases de données existantes seront utilisés.
+ .
+ Veuillez noter que MariaDB fournit des fonctionnalités améliorées qui n'existent pas dans MySQL ce qui peut interdire un retour ultérieur à MySQL, tout au moins de manière moins automatique que la migration de MySQL vers MariaDB.
+Description-it.UTF-8: Migrare a MariaDB?
+ MariaDB è un perfetto sostituto per MySQL. Utilizzerà l'attuale file di configurazione (my.cnf) e i database presenti.
+ .
+ Notare che MariaDB dispone di alcune funzionalità avanzate che non esistono in MySQL, di conseguenza non sempre funziona la migrazione all'indietro verso MySQL, o almeno non è automatica come la migrazione da MySQL a MariaDB.
+Description-ja.UTF-8: 本当に MariaDB に移行しますか?
+ MariaDB は MySQL をそのまま置き換えられる代替です。現在の設定ファイル (my.cnf) と現在のデータベースを利用します。
+ .
+ MariaDB には MySQL に存在していない機能の拡張がいくらか存在し、そのため MySQL に再び移行する場合は、MySQL から MariaDB への移行のような自動での移行が常にできるとは限りません。
+Description-nl.UTF-8: wilt u echt overschakelen op MariaDB?
+ MariaDB is een volwaardige vervanger voor MySQL. Het zal de bestaande configuratiebestanden (my.cnf) en de bestaande databases gebruiken.
+ .
+ Merk op dat MariaDB een aantal uitbreidingen heeft die niet bestaan in MySQL. Daardoor zal terug overschakelen op MySQL niet altijd lukken, of althans niet even automatisch als overschakelen van MySQL op MariaDB.
+Description-ru.UTF-8: Хотите перейти на MariaDB?
+ MariaDB — современная замена MySQL. Будет использован ваш файл настроек (my.cnf) и имеющиеся базы данных.
+ .
+ Заметим, что MariaDB имеет дополнительные возможности, которые отсутствуют в MySQL, и поэтому обратный переход на MySQL не всегда может быть выполнен, по крайней мере, не в автоматическом режиме как с MySQL на MariaDB.
+

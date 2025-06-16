@@ -1,0 +1,6 @@
+25e6e71332eebd3d1b633c0306b856ca  usr/bin/mysql
+5509a6dfd481e3b4e26979c5dd2d658c  usr/bin/mysqlcheck
+afaed6d9ba1fb94323fea3578c001cca  usr/share/doc/mariadb-client-core-5.5/copyright
+3efffa2cb25ce4b5bbb75dcaa8a13415  usr/share/lintian/overrides/mariadb-client-core-5.5
+2765209f48f097c3c4ed2c1df5d5f920  usr/share/man/man1/mysql.1.gz
+bbf858acefcec6d6943ff973629345bb  usr/share/man/man1/mysqlcheck.1.gz

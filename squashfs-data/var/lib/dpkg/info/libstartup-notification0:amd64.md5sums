@@ -1,0 +1,6 @@
+041dd09b8df12198844a68e4a38a0749  usr/lib/x86_64-linux-gnu/libstartup-notification-1.so.0.0.0
+a11dcafd27f5eb7688651e518110827d  usr/share/doc/libstartup-notification0/AUTHORS
+8693fdb5ebb20478db86e376fb870a99  usr/share/doc/libstartup-notification0/NEWS.gz
+dac011b30dada7beb9a544e3e1443254  usr/share/doc/libstartup-notification0/changelog.Debian.gz
+82f60542a003b4730d33dd79e5b1ea46  usr/share/doc/libstartup-notification0/copyright
+a5d6460176109d82a515dfd336754857  usr/share/lintian/overrides/libstartup-notification0

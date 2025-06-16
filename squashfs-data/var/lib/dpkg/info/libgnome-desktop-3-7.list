@@ -1,0 +1,16 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libgnome-desktop-3-7
+/usr/share/doc/libgnome-desktop-3-7/README
+/usr/share/doc/libgnome-desktop-3-7/copyright
+/usr/share/doc/libgnome-desktop-3-7/AUTHORS
+/usr/share/doc/libgnome-desktop-3-7/changelog.Debian.gz
+/usr/share/doc/libgnome-desktop-3-7/NEWS.gz
+/usr/lib
+/usr/lib/libgnome-desktop-3.so.7.0.0
+/usr/lib/libgnome-desktop-3-7
+/usr/lib/libgnome-desktop-3-7/check_gl_texture_size
+/usr/lib/libgnome-desktop-3-7/gnome-rr-debug
+/usr/lib/libgnome-desktop-3.so.7

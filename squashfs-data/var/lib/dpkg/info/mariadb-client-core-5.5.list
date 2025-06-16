@@ -1,0 +1,17 @@
+/.
+/usr
+/usr/share
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/mariadb-client-core-5.5
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/mysqlcheck.1.gz
+/usr/share/man/man1/mysql.1.gz
+/usr/share/doc
+/usr/share/doc/mariadb-client-core-5.5
+/usr/share/doc/mariadb-client-core-5.5/copyright
+/usr/bin
+/usr/bin/mysqlcheck
+/usr/bin/mysql
+/usr/share/doc/mariadb-client-core-5.5/changelog.Debian.gz

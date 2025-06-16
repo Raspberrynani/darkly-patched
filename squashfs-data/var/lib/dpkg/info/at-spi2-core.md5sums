@@ -1,0 +1,9 @@
+24b902f6a5011568db12e02f849a0e36  usr/lib/at-spi2-core/at-spi-bus-launcher
+be9b9c94a75efc8def181d31abf3f26d  usr/lib/at-spi2-core/at-spi2-registryd
+f030907f8c265a3188a2b3e14a828e1b  usr/share/dbus-1/services/org.a11y.Bus.service
+b72a9f034f41f2bd105a1af23d596641  usr/share/dbus-1/services/org.a11y.atspi.Registry.service
+06660508b1236e7964f7298a769ffdff  usr/share/doc/at-spi2-core/NEWS.gz
+0b50684c98c6414b8133a6aa1534b1b2  usr/share/doc/at-spi2-core/README
+39c5d06c2c84ad8ec5709b6bca4f0675  usr/share/doc/at-spi2-core/copyright
+f153ad1ef3a36b771198c2c0f152d2ab  usr/share/upstart/sessions/at-spi2-registryd.conf
+f5880b1813a3524539b5ccf98232bbbd  usr/share/upstart/xdg/autostart/at-spi-dbus-bus.desktop

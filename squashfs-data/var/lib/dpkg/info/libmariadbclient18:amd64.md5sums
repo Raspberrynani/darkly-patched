@@ -1,0 +1,6 @@
+a878bfd92384eb8910280b6d76f4a4a8  usr/lib/mysql/plugin/dialog.so
+4179624dd7ccfa28268becd4ab384b36  usr/lib/mysql/plugin/mysql_clear_password.so
+ad2096c6ea6cbc4f58e0dd5253e91b09  usr/lib/x86_64-linux-gnu/libmariadbclient.so.18.0.0
+40bb66607af1413d52085b21f9550005  usr/share/doc/libmariadbclient18/changelog.Debian.gz
+afaed6d9ba1fb94323fea3578c001cca  usr/share/doc/libmariadbclient18/copyright
+60c73c8ba4471cd216825592151a38e5  usr/share/lintian/overrides/libmariadbclient18

@@ -1,0 +1,6 @@
+f038181c9ed51bdd4919db71983d14c0  usr/lib/pulse-4.0/modules/module-x11-bell.so
+01eb68f02c1fe074e9d32b702cc7b020  usr/lib/pulse-4.0/modules/module-x11-cork-request.so
+c8f60c60e0975fcc4fef785dd3c15bce  usr/lib/pulse-4.0/modules/module-x11-publish.so
+03efb9777a036c7a28c6e8ea8fa7419a  usr/lib/pulse-4.0/modules/module-x11-xsmp.so
+1a70969fd317243739e917dee33e532a  usr/share/doc/pulseaudio-module-x11/copyright
+885fdd2ef8e6ba86112ba4cdcc0bb68b  usr/share/lintian/overrides/pulseaudio-module-x11

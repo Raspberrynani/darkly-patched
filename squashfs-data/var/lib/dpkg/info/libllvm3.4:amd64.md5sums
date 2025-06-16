@@ -1,0 +1,4 @@
+6e36fe1b652c755632b510680f463d8b  usr/lib/x86_64-linux-gnu/libLLVM-3.4.so.1
+781c45b1583b6acf769e8bcc02c973f9  usr/share/doc/libllvm3.4/changelog.Debian.gz
+063e0448ac11bde832bec75b88775293  usr/share/doc/libllvm3.4/copyright
+347471ab6f1f438170004db411e1650c  usr/share/lintian/overrides/libllvm3.4
