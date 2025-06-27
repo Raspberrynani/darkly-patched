@@ -46,7 +46,7 @@ If you really feel the need to help fix this thing, fine. `main` is protected so
 
 2.  **Fork** this repo.
 3.  Make a new **branch**.
-4.  Do your thing.
+4.  Do your thing. (PS. the files that creates the webpage is at [here](squashfs-data/var/www/html), so dont go fucking other parts up)
 5.  **IMPORTANT**: Git is a fucking idiot and won't track empty directories. Run the `gitkeep.sh` script I left in the root before you push or I'll just close your PR.
 6.  Send a **Pull Request** to `main`.
 
